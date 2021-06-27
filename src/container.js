@@ -1,5 +1,6 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Grid } from '@material-ui/core'
+import styled from 'styled-components'
 import HorizontalStepper from './components/stepper'
 import SubscriptionForm from './components/subscriptionForm'
 import CreditCardForm from './components/creditCardForm'
@@ -15,7 +16,7 @@ export default function ContainerApp() {
   }
 
   const [appState, setAppState] = useState(JSON)
-  const [activeStep, setActiveStep] = useState(2)
+  const [activeStep, setActiveStep] = useState(0)
 
   const onSubmitStep = (formData) => {
     setAppState({ ...formData, ...appState })
@@ -38,12 +39,11 @@ export default function ContainerApp() {
 
   if (!appState.subscriptionPlans) return <div>Loading...</div>
   return (
-    <Grid
+    <AppContainer
       container
       direction='row'
       justify='center'
       alignItems='center'
-      spacing={4}
     >
       <Grid
         container
@@ -71,8 +71,15 @@ export default function ContainerApp() {
       </Grid>
 
       <RenderIf condition={activeStep !== 2}>
-        <Infos values={appState} />
+        <Grid md={4} direction='column' justify='center' alignItems='center'>
+          <Infos values={appState} />
+        </Grid>
       </RenderIf>
-    </Grid>
+    </AppContainer>
   )
 }
+
+const AppContainer = styled(Grid)`
+  max-width: 800px;
+  margin: 0 auto;
+`

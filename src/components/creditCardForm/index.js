@@ -142,9 +142,10 @@ const CreditCardForm = ({ onSubmitStep }) => {
             </S.ContainerSelect>
           </S.MonthsInputsContainer>
         </Grid>
-        <Button color='primary' variant='outlined' type='submit'>
+
+        <S.CTA color='primary' variant='outlined' type='submit'>
           Pay
-        </Button>
+        </S.CTA>
       </S.Form>
     </Container>
   )

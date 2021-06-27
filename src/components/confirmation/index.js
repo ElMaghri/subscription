@@ -21,9 +21,10 @@ const Confirmation = ({ values }) => {
     }
     fetch('https://reqres.in/api/posts', requestOptions).then((res) => {
       if (res.status === 201) {
-        console.log('your order is submited successfully ')
+        alert('your order is submitted successfully ')
+      } else {
+        alert('oh oh something is wrong please try later on ')
       }
-      return res.json()
     })
   }
   return (

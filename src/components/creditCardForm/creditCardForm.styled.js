@@ -1,4 +1,4 @@
-import { FormControl, TextField } from '@material-ui/core'
+import { Button, FormControl, TextField } from '@material-ui/core'
 import styled from 'styled-components'
 
 export const Card = styled.div`
@@ -54,4 +54,9 @@ export const MonthsInputsContainer = styled.div`
 export const ContainerSelect = styled(FormControl)`
   min-width: 90px;
   margin-left: 15px;
+`
+
+export const CTA = styled(Button)`
+  margin-top: 25px;
+  align-self: flex-end;
 `

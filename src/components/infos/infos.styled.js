@@ -1,4 +1,12 @@
+import { Container } from '@material-ui/core'
 import styled from 'styled-components'
+
+export const InfosContainer = styled(Container)`
+  border-radius: 10px;
+  background: #e9ecef;
+  max-width: 500px;
+  padding: 50px 25px;
+`
 
 export const TextRow = styled.p`
   font-family: Roboto;

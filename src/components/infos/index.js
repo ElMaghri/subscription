@@ -12,7 +12,7 @@ const Infos = memo(function Infos({ values }) {
     : pricePerGB * storage
 
   return (
-    <Container>
+    <S.InfosContainer>
       <S.TextRow>
         selected Storage <span>{storage} GB</span>
       </S.TextRow>
@@ -23,7 +23,7 @@ const Infos = memo(function Infos({ values }) {
       <S.TotalPrice>
         Total <span>{totalPrice.toFixed(2)} $</span>
       </S.TotalPrice>
-    </Container>
+    </S.InfosContainer>
   )
 })
 
